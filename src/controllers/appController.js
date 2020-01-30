@@ -9,6 +9,7 @@ exports.index = function (req,res) {
 
 };
 exports.store = function (req,res) {
+    console.log(req);
     let newTask = new Task(req.body);
     if (!newTask.task || !newTask.status){
        res.status(400).send({error:true,message:"Please provide task/status"})

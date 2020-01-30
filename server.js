@@ -1,8 +1,13 @@
+const dotenv = require('dotenv');
 const express = require('express'),
     app = express(),
-    db = require('./src/db.js'),
+   /*  db = require('./src/db.js'), */
     bodyParser = require('body-parser');
-    port = process.env.PORT || 3000;
+
+dotenv.config();
+
+port = process.env.PORT /*|| 3000*/;
+console.log(port);
 app.listen(port);
 
 console.log('API server started on: ' + port);

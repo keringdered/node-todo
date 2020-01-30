@@ -1,18 +1,17 @@
 'user strict';
 
-var mysql = require('mysql');
 
+var mysql = require('mysql');
 //local mysql db connection
 var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'root',
-    database : 'todos'
+    host     : process.env.DB_HOST,
+    user     : process.env.DB_USERNAME,
+    password :  process.env.DB_PASSWORD,
+    database :  process.env.DB_DATABASE
 });
 
 connection.connect(function(err) {
     if (err) throw err;
-    console.log("Connected!");
 });
 
 module.exports = connection;
